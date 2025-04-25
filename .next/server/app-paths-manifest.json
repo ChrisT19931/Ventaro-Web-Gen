@@ -1,0 +1,19 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/checkout/page": "app/checkout/page.js",
+  "/auth/page": "app/auth/page.js",
+  "/page": "app/page.js",
+  "/templates/[id]/page": "app/templates/[id]/page.js",
+  "/generator/[id]/page": "app/generator/[id]/page.js",
+  "/templates/[id]/customize/page": "app/templates/[id]/customize/page.js",
+  "/auth/login/page": "app/auth/login/page.js",
+  "/wix-export/page": "app/wix-export/page.js",
+  "/templates/page": "app/templates/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/admin/payments/page": "app/admin/payments/page.js",
+  "/admin/editor/page": "app/admin/editor/page.js",
+  "/admin/page": "app/admin/page.js",
+  "/admin/templates/page": "app/admin/templates/page.js",
+  "/admin/users/page": "app/admin/users/page.js"
+}

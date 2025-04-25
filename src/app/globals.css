@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200..1000;1,200..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  
+  /* Custom color palette */
+  --color-black: #000000;
+  --color-grey: #333333;
+  --color-dark-purple: #2D1B69;
+  --color-neon-blue: #00FFFF;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-primary {
+  background-color: var(--color-dark-purple);
+  color: white;
+  border: 2px solid var(--color-neon-blue);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-neon-blue);
+  color: var(--color-black);
+}
+
+.admin-panel {
+  background-color: var(--color-grey);
+  border: 1px solid var(--color-neon-blue);
+}
+
+.editor-container {
+  border: 1px solid var(--color-dark-purple);
+  background-color: rgba(45, 27, 105, 0.1);
+}
+
+.template-card {
+  border: 1px solid var(--color-grey);
+  transition: all 0.3s ease;
+}
+
+.template-card:hover {
+  border-color: var(--color-neon-blue);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
