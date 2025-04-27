@@ -1,4 +1,4 @@
-// File: /home/ubuntu/website-generator/website-generator-app/src/app/layout.tsx
+// File: /Users/ventaro/Ventaro-Web-Gen/src/app/layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

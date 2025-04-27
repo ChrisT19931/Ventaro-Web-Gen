@@ -27,7 +27,7 @@ export default function TemplateCard({
       <div 
         className="h-48 bg-dark-purple relative overflow-hidden"
         style={{
-          backgroundImage: imageUrl ? `url(${imageUrl})` : 'none',
+          backgroundImage: imageUrl ? \`url(\${imageUrl})\` : 'none',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -51,19 +51,19 @@ export default function TemplateCard({
         <h3 className="font-heading font-bold text-lg mb-2">{title}</h3>
         <p className="text-sm text-gray-300 mb-4 line-clamp-2">{description}</p>
         <div className="flex justify-between items-center">
-          <span className="text-neon-blue font-bold">${price}</span>
+          <span className="text-neon-blue font-bold">\${price}</span>
           <div className="flex space-x-2">
             <Link 
-              href={`/templates/${id}/preview`}
+              href={\`/templates/\${id}/preview\`}
               className="p-2 bg-dark-purple rounded hover:bg-opacity-80 text-sm"
             >
               Preview
             </Link>
             <Link 
-              href={`/templates/${id}/customize`}
+              href={\`/templates/\${id}/customize\`}
               className="p-2 bg-neon-blue text-black rounded hover:bg-opacity-80 text-sm font-medium"
             >
-              Use Template
+              Customize
             </Link>
           </div>
         </div>

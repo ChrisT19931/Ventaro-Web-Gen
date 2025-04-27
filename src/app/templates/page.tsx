@@ -1,52 +1,50 @@
 "use client";
 
-import React, { useState } from "react";
-import { templates } from "../../components/templates/templateData";
-import WebsiteGeneratorService from "../../components/generator/WebsiteGeneratorService";
+import { templates } from "@/components/templates/templateData";
+import TemplateCard from "@/components/templates/TemplateCard";
 
-export default function CustomizeTemplatePage({ params }: { params: { id: string } }) {
-  const templateId = params.id;
-  const template = templates.find(t => t.id === templateId);
-  const [customData, setCustomData] = useState(template?.defaults || {});
-
-  if (!template) {
-    return <div className="p-6 text-red-500">Template not found.</div>;
-  }
-
-  const handleGenerate = async () => {
-    const result = await WebsiteGeneratorService.generate(templateId, customData);
-    // do something with result...
-    console.log(result);
+export default function TemplatesPage() {
+  const handlePay = async (interval: "monthly" | "yearly", templateId: string) => {
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ templateId, draftId: templateId, billingInterval: interval }),
+    });
+    const { url } = await res.json();
+    window.location.href = url;
   };
 
   return (
-    <div className="min-h-screen bg-black text-white p-8">
-      <h1 className="text-3xl font-heading font-bold mb-4">
-        Customize {template.name}
-      </h1>
-      {/* Render your customization form fields */}
-      <div className="space-y-4 mb-6">
-        {template.fields.map(field => (
-          <div key={field.key}>
-            <label className="block mb-1">{field.label}</label>
-            <input
-              type="text"
-              value={(customData as any)[field.key] || ''}
-              onChange={e =>
-                setCustomData(prev => ({ ...prev, [field.key]: e.target.value }))
-              }
-              className="w-full px-3 py-2 bg-dark-purple rounded-md"
-            />
+    <div style={{ padding: "40px" }}>
+      <h1 style={{ fontSize: "36px", marginBottom: "20px" }}>Choose Your Website Template</h1>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+        {templates.map((template) => (
+          <div key={template.id} style={{ border: "1px solid #ccc", padding: "20px", width: "300px" }}>
+            <img src={template.thumbnail} alt={template.name} style={{ width: "100%", height: "200px", objectFit: "cover" }} />
+            <h2 style={{ fontSize: "24px", margin: "10px 0" }}>{template.name}</h2>
+            <p>{template.description}</p>
+            <p><strong>Tier:</strong> {template.tier}</p>
+            {/* NO more single payment */}
+            <button
+              style={{ marginTop: "10px", padding: "10px 20px", backgroundColor: "black", color: "white", border: "none", cursor: "pointer" }}
+              onClick={() => handlePay("monthly", template.id)}
+            >
+              Buy Monthly ($30/mo)
+            </button>
+            <button
+              style={{ marginTop: "10px", marginLeft: "10px", padding: "10px 20px", backgroundColor: "gray", color: "white", border: "none", cursor: "pointer" }}
+              onClick={() => handlePay("yearly", template.id)}
+            >
+              Buy Yearly ($100/year)
+            </button>
+            <div style={{ marginTop: "10px" }}>
+              <a href={`/templates/${template.id}/preview`} style={{ color: "#00f", fontSize: "14px", textDecoration: "underline" }}>
+                Preview
+              </a>
+            </div>
           </div>
         ))}
       </div>
-
-      <button
-        onClick={handleGenerate}
-        className="px-6 py-3 bg-neon-blue text-black rounded-md font-bold"
-      >
-        Generate Site
-      </button>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-// File: /home/ubuntu/website-generator/website-generator-app/src/app/templates/page.tsx
+// File: /Users/ventaro/Ventaro-Web-Gen/src/app/templates/page.tsx
 import * as entry from '../../../../src/app/templates/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
