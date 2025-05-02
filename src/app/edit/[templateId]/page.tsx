@@ -5,11 +5,11 @@ import { useParams } from "next/navigation";
 import { useState } from "react";
 
 const templateMap: Record<string, () => Promise<{ default: React.ComponentType<any> }>> = {
-  template1: () => import("../../../../templates/template1"),
-  template2: () => import("../../../../templates/template2"),
-  template3: () => import("../../../../templates/template3"),
-  template4: () => import("../../../../templates/template4"),
-  template5: () => import("../../../../templates/template5"),
+    template1: () => import("../../../../templates/template1"),
+    template2: () => import("../../../../templates/template2"),
+    template3: () => import("../../../../templates/template3"),
+    template4: () => import("../../../../templates/template4"),
+    template5: () => import("../../../../templates/template5"),
 };
 
 export default function TemplateEditorPage() {
@@ -19,8 +19,9 @@ export default function TemplateEditorPage() {
   const [subtext, setSubtext] = useState("Your Subtext Here");
   const [buttonText, setButtonText] = useState("Click Me");
 
-  const loader = templateMap[templateId as string];
-  const TemplateComponent = loader ? dynamic(loader) : null;
+  // Ensure templateId is a string
+  const loader = typeof templateId === "string" ? templateMap[templateId] : undefined;
+  const TemplateComponent = loader ? dynamic(loader, { ssr: false }) : null;
 
   if (!TemplateComponent) return <div className="p-10 text-red-500">Template not found</div>;
 
@@ -59,12 +60,15 @@ export default function TemplateEditorPage() {
 
       {/* Live preview */}
       <section className="col-span-2 p-10">
+        {/* Pass both buttonText and ctaText for compatibility */}
         <TemplateComponent
           headline={headline}
           subtext={subtext}
           buttonText={buttonText}
+          ctaText={buttonText}
         />
       </section>
     </main>
   );
 }
+

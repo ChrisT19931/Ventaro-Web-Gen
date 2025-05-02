@@ -1,13 +1,6 @@
-import { NextConfig } from 'next'
-
-const nextConfig: NextConfig = {
-  /* config options here */
-  eslint: {
-    ignoreDuringBuilds: true,
+/** next.config.js */
+module.exports = {
+  experimental: {
+    cache: false,               // turn off webpack’s file-based cache
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-}
-
-export default nextConfig
+};

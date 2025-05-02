@@ -6,12 +6,15 @@ import { useParams } from "next/navigation";
 import { useState } from "react";
 
 const templateMap: Record<string, () => Promise<{ default: React.ComponentType<any> }>> = {
-  template1: () => import("../../../../templates/template1"),
-  template2: () => import("../../../../templates/template2"),
-  template3: () => import("../../../../templates/template3"),
-  template4: () => import("../../../../templates/template4"),
-  template5: () => import("../../../../templates/template5"),
+  template1: () => import("@/../templates/template1"),
+  template2: () => import("@/../templates/template2"),
+  template3: () => import("@/../templates/template3"),
+  template4: () => import("@/../templates/template4"),
+  template5: () => import("@/../templates/template5"),
 };
+
+  
+  
 
 export default function TemplateEditorPage() {
   const { templateId } = useParams();
@@ -58,14 +61,17 @@ export default function TemplateEditorPage() {
         </div>
       </aside>
 
+      // ...existing code...
       {/* Live preview */}
       <section className="col-span-2 p-10">
         <TemplateComponent
           headline={headline}
           subtext={subtext}
           buttonText={buttonText}
+          ctaText={buttonText} // Added for compatibility with templates expecting ctaText
         />
       </section>
     </main>
   );
 }
+// ...existing code...
