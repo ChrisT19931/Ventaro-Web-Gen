@@ -1,2 +1,7 @@
+# .gitignore
+.next
 node_modules
-.vercel
+.env
+.DS_Store
+*.log
+*.local
