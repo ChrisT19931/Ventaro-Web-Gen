@@ -1,6 +1,6 @@
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/.pnpm/next@15.3.1_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/.pnpm/next@15.3.1_react-dom@19.1.0_react@19.1.0__react@19.1.0/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/globals.css ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/globals.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************/
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200..1000;1,200..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 *, ::before, ::after{
@@ -676,6 +676,9 @@ video {
 .z-\[1\]{
   z-index: 1;
 }
+.col-span-2{
+  grid-column: span 2 / span 2;
+}
 .-mx-1{
   margin-left: -0.25rem;
   margin-right: -0.25rem;
@@ -722,9 +725,6 @@ video {
 .mb-2{
   margin-bottom: 0.5rem;
 }
-.mb-3{
-  margin-bottom: 0.75rem;
-}
 .mb-4{
   margin-bottom: 1rem;
 }
@@ -739,9 +739,6 @@ video {
 }
 .ml-2{
   margin-left: 0.5rem;
-}
-.ml-3{
-  margin-left: 0.75rem;
 }
 .ml-auto{
   margin-left: auto;
@@ -897,9 +894,6 @@ video {
 .h-\[600px\]{
   height: 600px;
 }
-.h-\[800px\]{
-  height: 800px;
-}
 .h-\[var\(--radix-navigation-menu-viewport-height\)\]{
   height: var(--radix-navigation-menu-viewport-height);
 }
@@ -1053,9 +1047,6 @@ video {
 .max-w-3xl{
   max-width: 48rem;
 }
-.max-w-4xl{
-  max-width: 56rem;
-}
 .max-w-6xl{
   max-width: 72rem;
 }
@@ -1064,12 +1055,6 @@ video {
 }
 .max-w-\[--skeleton-width\]{
   max-width: var(--skeleton-width);
-}
-.max-w-\[375px\]{
-  max-width: 375px;
-}
-.max-w-\[768px\]{
-  max-width: 768px;
 }
 .max-w-lg{
   max-width: 32rem;
@@ -1139,21 +1124,6 @@ video {
   --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-.scale-100{
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.scale-50{
-  --tw-scale-x: .5;
-  --tw-scale-y: .5;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.scale-75{
-  --tw-scale-x: .75;
-  --tw-scale-y: .75;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
 .transform{
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
@@ -1192,12 +1162,6 @@ video {
 }
 .resize{
   resize: both;
-}
-.list-inside{
-  list-style-position: inside;
-}
-.list-disc{
-  list-style-type: disc;
 }
 .list-none{
   list-style-type: none;
@@ -1450,6 +1414,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity, 1));
 }
+.border-gray-800{
+  --tw-border-opacity: 1;
+  border-color: rgb(31 41 55 / var(--tw-border-opacity, 1));
+}
 .border-green-500{
   --tw-border-opacity: 1;
   border-color: rgb(34 197 94 / var(--tw-border-opacity, 1));
@@ -1502,6 +1470,14 @@ video {
 .bg-gray-600{
   --tw-bg-opacity: 1;
   background-color: rgb(75 85 99 / var(--tw-bg-opacity, 1));
+}
+.bg-gray-800{
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1));
+}
+.bg-gray-900{
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1));
 }
 .bg-green-500{
   --tw-bg-opacity: 1;
@@ -1573,6 +1549,9 @@ video {
 }
 .fill-current{
   fill: currentColor;
+}
+.object-cover{
+  object-fit: cover;
 }
 .p-0{
   padding: 0px;
@@ -1863,9 +1842,6 @@ video {
 .text-yellow-500{
   --tw-text-opacity: 1;
   color: rgb(234 179 8 / var(--tw-text-opacity, 1));
-}
-.underline{
-  text-decoration-line: underline;
 }
 .underline-offset-4{
   text-underline-offset: 4px;
@@ -2188,6 +2164,12 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 20;
 }
 
+.hover\:scale-105:hover{
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .hover\:bg-dark-purple:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(45 27 105 / var(--tw-bg-opacity, 1));
@@ -2227,6 +2209,12 @@ h1, h2, h3, h4, h5, h6 {
 .hover\:shadow-\[0_0_0_1px_hsl\(var\(--sidebar-accent\)\)\]:hover{
   --tw-shadow: 0 0 0 1px hsl(var(--sidebar-accent));
   --tw-shadow-colored: 0 0 0 1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.hover\:shadow-xl:hover{
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
